@@ -17,7 +17,7 @@ const Projects = () => {
       description: "A modern, high-performance company landing page and web presence featuring dynamic layout sections, interactive UI elements, and sleek responsive design.",
       tech: ["React", "HTML5", "CSS3", "JavaScript", "Tailwind"],
       liveUrl: "https://petabyteinnovations.in/",
-      iframeUrl:"https://petabyteinnovations.in/"
+      iframeUrl: "https://petabyteinnovations.in/"
     },
     {
       title: "Vanshitex",
