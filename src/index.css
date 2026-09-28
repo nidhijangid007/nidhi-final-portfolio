@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 26% 14%;
+    --foreground: 220 20% 97%;
+
+    --card: 220 24% 18%;
+    --card-foreground: 220 20% 97%;
+
+    --popover: 220 24% 18%;
+    --popover-foreground: 220 20% 97%;
+
+    --primary: 263 70% 65%;
+    --primary-foreground: 220 20% 97%;
+
+    --secondary: 220 22% 24%;
+    --secondary-foreground: 220 20% 97%;
+
+    --muted: 220 22% 24%;
+    --muted-foreground: 220 15% 65%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 220 20% 97%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 220 20% 97%;
+
+    --border: 220 22% 24%;
+    --input: 220 22% 24%;
+    --ring: 263 70% 65%;
+
+    --radius: 1rem;
+
+    /* Custom portfolio colors */
+    --gradient-start: 263 70% 65%;
+    --gradient-end: 217 91% 60%;
+    --card-shadow: 263 70% 65% / 0.1;
+    --glow: 263 70% 65% / 0.3;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+    font-weight: 700;
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom gradient background */
+  .gradient-bg {
+    background: linear-gradient(135deg, hsl(var(--gradient-start)) 0%, hsl(var(--gradient-end)) 100%);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--gradient-start)) 0%, hsl(var(--gradient-end)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Card glow effect */
+  .card-glow {
+    box-shadow: 0 8px 32px hsl(var(--card-shadow)), 0 0 0 1px hsl(var(--border));
+    transition: all 0.3s ease;
+  }
+
+  .card-glow:hover {
+    box-shadow: 0 12px 48px hsl(var(--glow)), 0 0 0 1px hsl(var(--primary));
+    transform: translateY(-4px);
+  }
+
+  /* Animations */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.6s ease-out forwards;
+  }
+
+  /* Stagger animation delays */
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
